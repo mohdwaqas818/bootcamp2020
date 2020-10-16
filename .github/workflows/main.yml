@@ -27,7 +27,8 @@ jobs:
           node-version: 12
 
       # Runs a set of commands using the runners shell
-      - name: Installing surge
-        run: npm install --global surge
-      - name: deploying surge
-        run: surge ./ crabby-fall.surge.sh --token $ {{ secrets.SURGE_TOKEN }}
+      - name: install surge
+        run: npm install -g surge
+        
+      - name: deploy on surge
+        run: surge . crabby-fall.surge.sh --token ${{secrets.SURGE_TOKEN}}
